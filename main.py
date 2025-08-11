@@ -2,6 +2,13 @@ import pandas as pd
 import re
 from datetime import datetime
 
+
+"""recebe como paramentro um cpf e um nis se os 2 parametros estivere vazios retorna false"""
+def validar_cpf_nis(cpf, nis):
+    if not cpf and not nis:
+        return False
+    return True
+
 def validar_cpf(cpf):
     cpf_str = str(cpf).strip()
     if not cpf_str.isdigit():
@@ -87,4 +94,7 @@ def validar_planilha_sgp(path_arquivo):
         print("Planilha validada com sucesso, sem erros.")
 
 # Exemplo de uso:
-validar_planilha_sgp('planilha.csv')
+
+if __name__ == "__main__":
+    validar_planilha_sgp('planilha.csv')
+    
